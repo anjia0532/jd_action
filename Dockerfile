@@ -1,5 +1,7 @@
 FROM node:12-alpine
 
-RUN npm install cnpm -g && \
-    cnpm install && \
-    node jd_sign.js
+WORKDIR /tmp/jd
+ADD . /tmp/jd
+
+RUN  npm install --registry=https://registry.nlark.com
+CMD ["node /tmp/jd/jd_sign.js"]
