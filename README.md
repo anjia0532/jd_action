@@ -12,7 +12,7 @@
 
 ## 使用用法
 * 点击右上角 `Fork` 项目；
-* `Settings` -> `Secrets` 中添加京东cookie、Server酱SCKEY
+* `Settings` -> `Secrets` 中添加京东cookie、钉钉群机器人的token
 	- `JD_COOKIE`：京东cookie,多账号使用英文`|`进行分隔，例如 `a|b`
 	- `PUSH_KEY`：钉钉群组机器人自定义webhook的token
 * 点击`Star`，任务会自动执行，运行进度和结果可以在`Actions`页面查看；
