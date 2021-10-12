@@ -62,7 +62,7 @@ function sendNotificationIfNeed() {
         console.log('没有执行结果，任务中断!');
         return;
     }
-    let text = "京东签到_" + dateFormat();
+    let text = "京东签到_" + new Date().Format("yyyy-MM-dd HH:mm:ss");
     let desp = fs.readFileSync(result_path, "utf8")
 
     // 去除末尾的换行
@@ -70,7 +70,7 @@ function sendNotificationIfNeed() {
 
     const options = {
         uri: `https://oapi.dingtalk.com/robot/send?access_token=${TOKEN}`,
-        body: {"msgtype": "markdown", "markdown": {"title": text, "text": desp}},
+        body: {"msgtype": "text", "text": {"content": text + "\r\n" + desp}},
         json: true,
         method: 'POST'
     }
